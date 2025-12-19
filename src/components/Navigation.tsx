@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import { scrollToSection } from '@/lib/utils';
 
 const navLinks = [
   { label: 'About', target: 'about' },
@@ -24,13 +25,8 @@ export default function Navigation() {
   }, []);
 
   // Scroll to section without changing URL
-  const scrollToSection = (target: string) => {
-    const element = document.getElementById(target);
-    if (element) {
-      const navbarHeight = 80;
-      const targetPosition = element.getBoundingClientRect().top + window.scrollY - navbarHeight;
-      window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-    }
+  const handleScrollTo = (target: string) => {
+    scrollToSection(target);
     setIsMobileMenuOpen(false);
   };
 
@@ -65,7 +61,7 @@ export default function Navigation() {
               {navLinks.map((link) => (
                 <button
                   key={link.label}
-                  onClick={() => scrollToSection(link.target)}
+                  onClick={() => handleScrollTo(link.target)}
                   className="font-body text-xs tracking-widest uppercase text-foreground/70 hover:text-primary transition-colors duration-300"
                 >
                   {link.label}
@@ -98,7 +94,7 @@ export default function Navigation() {
               {navLinks.map((link, index) => (
                 <motion.button
                   key={link.label}
-                  onClick={() => scrollToSection(link.target)}
+                  onClick={() => handleScrollTo(link.target)}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}

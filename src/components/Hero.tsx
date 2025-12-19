@@ -6,6 +6,7 @@ import cover02 from '@/assets/hero/cover-02.jpg';
 import cover03 from '@/assets/hero/cover-03.jpg';
 import cover04 from '@/assets/hero/cover-04.jpg';
 import cover05 from '@/assets/hero/cover-05.jpg';
+import { scrollToSection } from '@/lib/utils';
 
 const carouselImages = [
   cover01,
@@ -103,15 +104,15 @@ export default function Hero() {
         </motion.p>
 
         {/* CTA Button */}
-        <motion.a
-          href="#contact"
+        <motion.button
+          onClick={() => scrollToSection('contact')}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
-          className="inline-block px-8 py-4 border border-primary text-primary font-body text-sm tracking-widest uppercase hover:bg-primary hover:text-primary-foreground transition-all duration-500"
+          className="inline-block px-12 py-4 border border-primary text-primary font-body text-sm tracking-widest uppercase hover:bg-primary hover:text-primary-foreground transition-all duration-500"
         >
           Book Your Date
-        </motion.a>
+        </motion.button>
 
         {/* Scroll Indicator */}
         <motion.div
