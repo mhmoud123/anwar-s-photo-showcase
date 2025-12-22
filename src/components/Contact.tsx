@@ -18,7 +18,7 @@ export default function Contact() {
       icon: MessageCircle,
       label: 'WhatsApp',
       value: '01027797779',
-      href: 'https://wa.me/201027797779',
+      href: 'https://api.whatsapp.com/send?phone=201027797779',
     },
     {
       icon: Instagram,
@@ -53,7 +53,7 @@ export default function Contact() {
               <motion.a
                 key={method.label}
                 href={method.href}
-                target={method.label !== 'Call' ? '_blank' : undefined}
+                target={method.label !== 'Call' && method.label !== 'WhatsApp' ? '_blank' : undefined}
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}

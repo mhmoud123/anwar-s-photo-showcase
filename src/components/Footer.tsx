@@ -25,9 +25,7 @@ export default function Footer() {
               <Instagram className="w-5 h-5" />
             </a>
             <a
-              href="https://wa.me/201027797779"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="https://api.whatsapp.com/send?phone=201027797779"
               className="w-10 h-10 border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300"
             >
               <MessageCircle className="w-5 h-5" />

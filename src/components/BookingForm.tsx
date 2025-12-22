@@ -21,13 +21,13 @@ export default function BookingForm() {
     setIsSubmitting(true);
     
     // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    // await new Promise(resolve => setTimeout(resolve, 1000));
     
     // Open WhatsApp with pre-filled message
     const message = encodeURIComponent(
       `Hello! I'd like to book a wedding photography session.\n\nName: ${formData.name}\nPhone: ${formData.phone}\nEvent Date: ${formData.eventDate}`
     );
-    window.open(`https://wa.me/201027797779?text=${message}`, '_blank');
+    window.location.href = `https://api.whatsapp.com/send?phone=201027797779&text=${message}`;
     
     toast({
       title: 'Redirecting to WhatsApp',
