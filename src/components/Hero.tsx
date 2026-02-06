@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import profileImage from '@/assets/profile.jpg';
+import profileImage from '@/assets/profile.jpeg';
 import { scrollToSection } from '@/lib/utils';
 
 const carouselImages = [
@@ -30,7 +30,7 @@ export default function Hero() {
             key={index}
             className="absolute inset-0"
             initial={{ opacity: 0 }}
-            animate={{ 
+            animate={{
               opacity: index === currentImage ? 1 : 0,
               scale: index === currentImage ? 1 : 1.1,
             }}
@@ -49,7 +49,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4">
+      <div className="relative z-10 text-center px-4 pt-20 md:pt-24">
         {/* Profile Photo */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -97,8 +97,8 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="max-w-2xl mx-auto text-foreground/80 font-body text-sm md:text-base leading-relaxed mb-12"
         >
-          Capturing your most precious moments with elegance and artistry. 
-          Every love story deserves to be told through timeless, cinematic imagery 
+          Capturing your most precious moments with elegance and artistry.
+          Every love story deserves to be told through timeless, cinematic imagery
           that you'll treasure for generations.
         </motion.p>
 
